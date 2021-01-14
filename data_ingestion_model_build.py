@@ -57,7 +57,7 @@ dwight_lines_string = dwight_lines.str.cat(sep=" ")
 class POSifiedTextNLTK(mk.Text):
     def word_split(self, sentence):
         words = re.split(self.word_split_pattern, sentence)
-        words = ["::".join(tag) for tag in nltk.pos_tag(words)]
+        # words = ["::".join(tag) for tag in nltk.pos_tag(words)]
         return words
 
     def word_join(self, words):

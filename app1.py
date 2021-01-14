@@ -26,12 +26,10 @@ api = Api(app)
 cwd = os.getcwd()
 
 
-
-# Copied models to desktop for easy importing
-michael_path = "C:/Users/phess/Desktop/michael_model_json.txt"
-dwight_path = "C:/Users/phess/Desktop/dwight_model_json.txt"
-jim_path = "C:/Users/phess/Desktop/jim_model_json.txt"
-pam_path = "C:/Users/phess/Desktop/pam_model_json.txt"
+michael_path = cwd + "\\michael_model_json.txt"
+dwight_path = cwd + "\\dwight_model_json.txt"
+jim_path = cwd + "\\jim_model_json.txt"
+pam_path = cwd + "\\pam_model_json.txt"
 
 with open(michael_path, "r") as fr:
     michael_model_json = json.load(fr)
@@ -55,7 +53,7 @@ class MichaelModel(Resource):
     def get(self):        
         # make a line
         michael_line = reconstituted_model_michael.make_sentence(tries=100)
-        m = {"line": michael_line}
+        m = {"Michael Line": michael_line}
         # create JSON object
         output = json.dumps(m)
         output=json.loads(output)
@@ -67,7 +65,7 @@ class JimModel(Resource):
     def get(self):
         # make a line
         jim_line = reconstituted_model_jim.make_sentence(tries=100)
-        j = {"line": jim_line}
+        j = {"Jim Line": jim_line}
         # create JSON object
         output = json.dumps(j)
         output=json.loads(output)
@@ -79,7 +77,7 @@ class PamModel(Resource):
     def get(self):
         # make a line
         pam_line = reconstituted_model_pam.make_sentence(tries=100)
-        p = {"line": pam_line}
+        p = {"Pam Line": pam_line}
         # create JSON object
         output = json.dumps(p)
         output=json.loads(output)
@@ -91,7 +89,7 @@ class DwightModel(Resource):
     def get(self):
         # make a line
         dwight_line = reconstituted_model_dwight.make_sentence(tries=100)
-        d = {"line": dwight_line}
+        d = {"Dwight Line": dwight_line}
         # create JSON object
         output = json.dumps(d)
         output=json.loads(output)
