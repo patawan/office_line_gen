@@ -18,7 +18,7 @@ all_lines = pd.read_excel(cwd + "\\the-office-lines.xlsx")
 # SCRUB A DUB DUB
 clean_lines = all_lines.loc[all_lines.deleted == False, :]  # only select rows that weren't deleted scenes
 clean_lines['line_text'] = clean_lines['line_text'].str.replace(r"\[.*\]", "")  # remove all actions plus the brackets
-clean_lines['speaker'] = clean_lines['speaker'].str.replace(r"\[.*\]", "")  # remove all actions from speaker (within [])
+clean_lines['speaker'] = clean_lines['speaker'].str.replace(r"\[.*\]", "")  # remove actions from speaker plus brackets
 clean_lines['speaker'] = clean_lines['speaker'].str.replace("Dwight.", "Dwight")
 clean_lines['speaker'] = clean_lines['speaker'].str.replace("Dwight:", "Dwight")  # fix spellings of Dwight
 
