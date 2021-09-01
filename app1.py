@@ -26,10 +26,10 @@ api = Api(app)
 cwd = os.getcwd()
 
 
-michael_path = cwd + "\\michael_model_json.txt"
-dwight_path = cwd + "\\dwight_model_json.txt"
-jim_path = cwd + "\\jim_model_json.txt"
-pam_path = cwd + "\\pam_model_json.txt"
+michael_path = cwd + "/michael_model_json.txt"
+dwight_path = cwd + "/dwight_model_json.txt"
+jim_path = cwd + "/jim_model_json.txt"
+pam_path = cwd + "/pam_model_json.txt"
 
 with open(michael_path, "r") as fr:
     michael_model_json = json.load(fr)
@@ -96,11 +96,16 @@ class DwightModel(Resource):
         
         return output
 
+class HelloTori(Resource):
+    def get(self):
+        return {'Hello': 'I love you! <3'}
+
 
 api.add_resource(MichaelModel, '/michael_model')
 api.add_resource(JimModel, '/jim_model')
 api.add_resource(PamModel, '/pam_model')
 api.add_resource(DwightModel, '/dwight_model')
+api.add_resource
 
 if __name__ == '__main__':
     #app.run(debug=True)

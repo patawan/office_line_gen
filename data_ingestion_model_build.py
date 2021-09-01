@@ -9,7 +9,7 @@ import json
 
 # import the excel file to a pandas data frame
 cwd = os.getcwd()
-all_lines = pd.read_excel(cwd + "\\the-office-lines.xlsx")
+all_lines = pd.read_excel(cwd + "/the-office-lines.xlsx")
 
 
 # Plan to build a model for the top 4 speakers (Michael, Dwight, Jim, & Pam)
